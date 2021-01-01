@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Signin";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/Main.css">
+    <link rel="stylesheet" href="~/AuthStyle.css">
+</head>
+<body>
+    <div class="center">
+        <header>
+            <h1>ВХОД</h1>
+        </header>
+        <form method="post" action="api/signin">
+            <div class="form-div">
+                <p>Введите свой логин: </p>
+                <input type="text" name="Login" />
+                <p>Введите свой пароль: </p>
+                <input type="text" name="Password" />
+
+                <input type="submit" value="Отправить" />
+            </div>
+        </form>
+        <footer>
+            Нету аккаунта? <a href="registration">Регистрация</a>
+        </footer>
+    </div>
+</body>
+</html>

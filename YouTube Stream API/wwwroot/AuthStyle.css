@@ -1,0 +1,21 @@
+﻿.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background-color: #504540;
+    padding: 15px 35px 35px 35px;
+    border: solid 1px #F80;
+    border-radius: 10px;
+}
+
+header {
+    font-weight: bold;
+    text-align: center;
+}
+
+footer {
+    margin: 5px 0px 0px 0px;
+    font-weight: bold;
+}

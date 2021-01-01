@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  db:
+    image: "mysql:latest"
+    restart: always
+    volumes:
+      - ./data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=maindb
+      - MYSQL_USER=SeanWoo
+      - MYSQL_PASSWORD=88003535555
+  youtubestreamapi:
+    image: ${DOCKER_REGISTRY-}youtubestreamapi
+    build:
+      context: .
+      dockerfile: YouTube Stream API/Dockerfile
+    depends_on:
+      - db
+    links:
+      - db
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - 44005:80
