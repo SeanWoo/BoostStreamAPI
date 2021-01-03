@@ -20,7 +20,5 @@ services:
       - db
     links:
       - db
-    environment:
-      - ASPNETCORE_URLS=http://+:80
     ports:
-      - 44005:80
+      - 5080:5080

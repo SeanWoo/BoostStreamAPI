@@ -23,7 +23,7 @@ namespace YouTube_Stream_API
                 {
                     webBuilder.ConfigureKestrel(options =>
                     {
-                        options.Listen(IPAddress.Loopback, 5080); //HTTP port
+                        options.Listen(IPAddress.Any, 5080); //HTTP port
                     });
                     webBuilder.UseStartup<Startup>();
                 });
