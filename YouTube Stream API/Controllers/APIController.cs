@@ -62,7 +62,7 @@ namespace YouTube_Stream_API.Controllers
             FileVersionInfo fileInfo;
             StringBuilder builder = new StringBuilder();
 
-            file_path = Path.Combine(_appEnvironment.ContentRootPath, "Files/Main/BoostStream.exe");
+            file_path = Path.Combine(_appEnvironment.ContentRootPath, "Files/Main/BoostStream.dll");
             fileInfo = FileVersionInfo.GetVersionInfo(file_path);
             builder.Append("Main:" + fileInfo.FileVersion + "\n");
 

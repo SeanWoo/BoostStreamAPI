@@ -30,7 +30,7 @@ namespace YouTube_Stream_API
             string connection = Configuration.GetConnectionString("DefaultConnection");
 
             services.AddMvc();
-            services.AddDbContext<ApplicationContext>(options => options.UseMySql(connection));
+            services.AddDbContext<ApplicationContext>(options => options.UseMySql(connection, ServerVersion.AutoDetect(connection)));
             services.AddControllers();
         }
 
