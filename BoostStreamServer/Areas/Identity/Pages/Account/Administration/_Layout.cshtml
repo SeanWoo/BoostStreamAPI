@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<partial name="_Head" />
+<body class="bg-secondary text-white">
+    <partial name="_Header" />
+    <div class="container">
+        <main role="main" class="pb-3 row">
+            <div class="col-3">
+                <ul class="nav nav-fill">
+                    <li class="nav-item">
+                        <a asp-area="Identity" asp-page="/Account/Administration/Manage/Tokens" class="card-link text-white">
+                            <div class="p-4">
+                                Управление токенами
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-area="Identity" asp-page="/Account/Administration/Manage/Users" class="card-link text-white">
+                            <div class="p-4">
+                                Управление пользователями
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="card-link text-white">
+                            <div class="p-4">
+                                Управление софтом
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-9">
+                @RenderBody()
+            </div>
+        </main>
+    </div>
+    <partial name="_Footer" />
+    <partial name="_MainScripts" />
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -2,7 +2,8 @@ version: '3.4'
 
 services:
   db:
-    image: "mysql:latest"
+    image: mysql:latest
+    container_name: MySQL
     restart: always
     volumes:
       - ./data:/var/lib/mysql
@@ -11,11 +12,12 @@ services:
       - MYSQL_DATABASE=maindb
       - MYSQL_USER=SeanWoo
       - MYSQL_PASSWORD=88003535555
-  youtubestreamapi:
-    image: ${DOCKER_REGISTRY-}youtubestreamapi
+  booststreamserver:
+    image: booststreamserver:release
+    container_name: BoostStreamServer
     build:
       context: .
-      dockerfile: YouTube Stream API/Dockerfile
+      dockerfile: BoostStreamServer/Dockerfile
     depends_on:
       - db
     links:

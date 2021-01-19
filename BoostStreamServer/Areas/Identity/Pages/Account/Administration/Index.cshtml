@@ -1,0 +1,5 @@
+﻿@page
+@model BoostStreamServer.Areas.Identity.Pages.Account.Administration.IndexModel
+@inject UserManager<User> UserManager
+
+<h1>Добро пожаловать @UserManager.GetUserName(User)</h1>

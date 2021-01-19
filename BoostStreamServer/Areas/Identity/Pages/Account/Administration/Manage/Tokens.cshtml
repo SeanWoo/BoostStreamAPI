@@ -1,0 +1,55 @@
+﻿@page
+@model BoostStreamServer.Areas.Identity.Pages.Account.Administration.Manage.TokensModel
+@{
+}
+
+<form method="post">
+    <h4>Генерация нового токена</h4>
+    <hr />
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Input.Access"></label>
+        <input asp-for="Input.Access" class="form-control bg-dark text-white" />
+        <span asp-validation-for="Input.Access" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <button type="submit" asp-page-handler="" class="btn btn-primary">Сгенерировать токен</button>
+    </div>
+</form>
+
+<table class="table table-dark">
+    <thead class="bg-info">
+        <tr>
+            <td>Id</td>
+            <td>Active</td>
+            <td>Access</td>
+            <td>Изменение</td>
+            <td>Удаление</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var token in Model.Tokens)
+        {
+            <tr>
+                <td>@token.Id</td>
+                <td>@token.Active</td>
+                <td>@token.Access</td>
+                <td>
+                    <a asp-page="Access" asp-route-id="@token.Id">
+                        <button type="submit" class="btn btn-info">Изменить права</button>
+                    </a>
+                </td>
+                <td>
+                    @if (token.Active)
+                    {
+                    <form method="post">
+                        <div class="form-group">
+                            <button type="submit" asp-page-handler="DeleteToken" asp-route-id="@token.Id" class="btn btn-danger">Удалить</button>
+                        </div>
+                    </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

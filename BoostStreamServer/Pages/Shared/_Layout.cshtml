@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <partial name="_Head" />
+<body class="bg-secondary text-white">
+    <partial name="_Header" />
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <partial name="_Footer" />
+
+    <partial name="_MainScripts" />
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

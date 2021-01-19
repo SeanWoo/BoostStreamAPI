@@ -1,0 +1,13 @@
+﻿@page "{id?}"
+@model BoostStreamServer.Areas.Identity.Pages.Account.Administration.Manage.AccessModel
+@{
+}
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Input.Access"></label>
+        <input asp-for="Input.Access" class="form-control" />
+        <span asp-validation-for="Input.Access" class="text-danger"></span>
+        <button type="submit" asp-page-handler="BanAccount" class="btn btn-success">Изменить</button>
+    </div>
+</form>
